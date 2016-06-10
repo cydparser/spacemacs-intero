@@ -50,8 +50,9 @@ Intero commands are prefixed by ~SPC m i~:
 ** REPL
 REPL commands are prefixed by ~SPC m s~:
 
-| Key Binding | Description                                     |
-|-------------+-------------------------------------------------|
-| ~SPC m s b~ | load or reload the current buffer into the REPL |
-| ~SPC m s s~ | show the REPL without switching to it           |
-| ~SPC m s S~ | show and switch to the REPL                     |
+| Key Binding | Description                                              |
+|-------------+----------------------------------------------------------|
+| ~SPC m s b~ | load or reload the current buffer into the REPL          |
+| ~SPC m s r~ | load or reload the current buffer and switch to the REPL |
+| ~SPC m s s~ | show the REPL without switching to it                    |
+| ~SPC m s S~ | show and switch to the REPL                              |

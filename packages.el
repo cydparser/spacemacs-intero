@@ -56,13 +56,13 @@
         (interactive)
         (pop-to-buffer (intero-repl-buffer)))
 
-      (defun intero//preserve-focus (f)
+      (defun intero/load-repl ()
+        "Load the current file in the REPL, display the REPL, but
+preserve buffer focus."
+        (interactive)
         (let ((buffer (current-buffer)))
-          (funcall f)
+          (intero-repl-load)
           (pop-to-buffer buffer)))
-
-      (advice-add 'intero-repl-load
-                  :around #'intero//preserve-focus)
 
       (dolist (mode haskell-modes)
         (spacemacs/set-leader-keys-for-major-mode mode
@@ -72,7 +72,8 @@
           "ht"  'intero-type-at
           "hT"  'intero/insert-type
 
-          "sb"  'intero-repl-load))
+          "sb"  'intero/load-repl
+          "sr"  'intero-repl-load))
 
       (dolist (mode (cons 'haskell-cabal-mode haskell-modes))
         (spacemacs/set-leader-keys-for-major-mode mode
