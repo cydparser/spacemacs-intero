@@ -61,13 +61,6 @@
       (advice-add 'intero-repl-load
                   :around #'intero//preserve-focus)
 
-      (spacemacs/declare-prefix-for-mode 'haskell-mode "mi" "haskell/intero")
-
-      (spacemacs/set-leader-keys-for-major-mode 'haskell-cabal-mode
-        "sc"  nil
-        "ss"  'intero/display-repl
-        "sS"  'intero/pop-to-repl)
-
       (dolist (mode haskell-modes)
         (spacemacs/set-leader-keys-for-major-mode mode
           "gg"  'intero-goto-definition
@@ -76,17 +69,23 @@
           "ht"  'intero-type-at
           "hT"  'intero/insert-type
 
+          "sb"  'intero-repl-load))
+
+      (dolist (mode (cons 'haskell-cabal-mode haskell-modes))
+        (spacemacs/set-leader-keys-for-major-mode mode
+          "sc"  nil
+          "ss"  'intero/display-repl
+          "sS"  'intero/pop-to-repl))
+
+      (dolist (mode (append haskell-modes '(haskell-cabal-mode intero-repl-mode)))
+        (spacemacs/declare-prefix-for-mode mode "mi" "haskell/intero")
+        (spacemacs/set-leader-keys-for-major-mode mode
           "ic"  'intero-cd
           "id"  'intero-devel-reload
           "ik"  'intero-destroy
           "il"  'intero-list-buffers
           "ir"  'intero-restart
-          "it"  'intero-targets
-
-          "sb"  'intero-repl-load
-          "sc"  nil
-          "ss"  'intero/display-repl
-          "sS"  'intero/pop-to-repl))
+          "it"  'intero-targets))
 
       (evil-define-key '(insert normal) intero-mode-map
         (kbd "M-.") 'intero-goto-definition))))
