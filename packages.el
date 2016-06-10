@@ -32,8 +32,11 @@
                    '(company-intero company-dabbrev-code company-yasnippet))
       (add-hook 'haskell-mode-hook
                 (lambda ()
-                  (dolist (checker '(haskell-ghc haskell-stack-ghc))
-                    (add-to-list 'flycheck-disabled-checkers checker))
+                  (let ((checkers '(haskell-ghc haskell-stack-ghc)))
+                    (if (boundp flycheck-disabled-checkers)
+                        (dolist (checker checkers)
+                          (add-to-list 'flycheck-disabled-checkers checker))
+                      (setq flycheck-disabled-checkers checkers)))
                   (intero-mode))))
     :config
     (progn
