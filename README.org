@@ -1,0 +1,57 @@
+#+TITLE: Intero layer
+
+* Description
+This layer adds [[http://commercialhaskell.github.io/intero/][Intero]] functionality on top of the Haskell layer.
+
+* Install
+** Layer
+1. Clone this repository into your =private= directory
+   #+BEGIN_SRC sh
+   git clone git@github.com:cydparser/spacemacs-intero.git ~/.emacs.d/private/intero
+   #+END_SRC
+2. Add =intero= to =dotspacemacs-configuration-layers=
+3. Restart Emacs
+
+** Dependencies
+This layer requires [[http://docs.haskellstack.org/en/stable/README/][Stack]]. The [[https://github.com/syl20bnr/spacemacs/tree/master/layers/+lang/haskell#dependencies][dependencies]] of the Haskell layer may also be
+installed. =ghc-mod=, =GHCi-ng=, and =hasktags= are disabled by this layer.
+
+* Key bindings
+Only the key bindings defined by this layer are listed here. See the Haskell
+layer's [[https://github.com/syl20bnr/spacemacs/blob/master/layers/%252Blang/haskell/README.org#key-bindings][key bindings]] for more.
+
+All Haskell specific bindings are prefixed with the major-mode leader ~SPC m~.
+
+| Key Binding | Description      |
+|-------------+------------------|
+| ~SPC m g g~ | go to definition |
+
+** Documentation
+Documentation commands are prefixed by ~SPC m h~:
+
+| Key Binding | Description                                                  |
+|-------------+--------------------------------------------------------------|
+| ~SPC m h i~ | print info of the identifier under the cursor                |
+| ~SPC m h t~ | print type of the identifier under the cursor                |
+| ~SPC m h T~ | insert the type signature of the identifier under the cursor |
+
+** Intero
+Intero commands are prefixed by ~SPC m i~:
+
+| Key Binding | Description                                     |
+|-------------+-------------------------------------------------|
+| ~SPC m i c~ | Change directory in backend process             |
+| ~SPC m i d~ | Reload [[https://github.com/commercialhaskell/intero/blob/a2f59694fbd08ba066930d49b8616325ea88b78e/elisp/intero.el#L271][DevelMain.hs]] (requires additional setup) |
+| ~SPC m i k~ | Kill the current backend process                |
+| ~SPC m i l~ | List backend process buffers                    |
+| ~SPC m i r~ | Restart backend process                         |
+| ~SPC m i t~ | Change the stack target                         |
+
+** REPL
+REPL commands are prefixed by ~SPC m s~:
+
+| Key Binding | Description                                     |
+|-------------+-------------------------------------------------|
+| ~SPC m s b~ | load or reload the current buffer into the REPL |
+| ~SPC m s s~ | show the REPL without switching to it           |
+| ~SPC m s S~ | show and switch to the REPL                     |
