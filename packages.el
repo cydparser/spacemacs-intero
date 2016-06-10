@@ -33,7 +33,7 @@
       (add-hook 'haskell-mode-hook
                 (lambda ()
                   (let ((checkers '(haskell-ghc haskell-stack-ghc)))
-                    (if (boundp flycheck-disabled-checkers)
+                    (if (boundp 'flycheck-disabled-checkers)
                         (dolist (checker checkers)
                           (add-to-list 'flycheck-disabled-checkers checker))
                       (setq flycheck-disabled-checkers checkers)))
