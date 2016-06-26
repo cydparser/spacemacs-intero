@@ -42,6 +42,8 @@
     (progn
       (spacemacs|diminish intero-mode " λ" " \\")
 
+      (setf (flycheck-checker-get 'intero 'next-checkers) '((warning . haskell-hlint)))
+
       (defun intero/insert-type ()
         (interactive)
         (intero-type-at :insert))
