@@ -7,7 +7,7 @@ This layer adds [[http://commercialhaskell.github.io/intero/][Intero]] functiona
 ** Layer
 1. Clone this repository into your =private= directory
    #+BEGIN_SRC sh
-   git clone git@github.com:cydparser/spacemacs-intero.git ~/.emacs.d/private/intero
+   git clone https://github.com/cydparser/spacemacs-intero.git ~/.emacs.d/private/intero
    #+END_SRC
 2. Add =intero= to =dotspacemacs-configuration-layers=
 3. Restart Emacs
