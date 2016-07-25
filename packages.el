@@ -51,13 +51,13 @@
 
       (defun intero/display-repl ()
         (interactive)
-        (let ((buffer (intero-repl-buffer)))
+        (let ((buffer (intero-repl-buffer nil)))
           (unless (get-buffer-window buffer 'visible)
-            (display-buffer (intero-repl-buffer)))))
+            (display-buffer (intero-repl-buffer nil)))))
 
       (defun intero/pop-to-repl ()
         (interactive)
-        (pop-to-buffer (intero-repl-buffer)))
+        (pop-to-buffer (intero-repl-buffer nil)))
 
       (defun intero/load-repl ()
         "Load the current file in the REPL, display the REPL, but
