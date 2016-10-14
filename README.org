@@ -1,6 +1,6 @@
 #+TITLE: Intero layer
 
-*IMPORTANT NOTE:* Spacemacs haskell layer now supports Intero on the develop branch: first try using that instead of this layer.
+*IMPORTANT NOTE:* Spacemacs haskell layer now supports Intero on the develop branch. We recommend using that instead of this package.
 
 * Description
 This layer adds [[http://commercialhaskell.github.io/intero/][Intero]] functionality on top of the Haskell layer. 
