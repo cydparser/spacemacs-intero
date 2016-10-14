@@ -1,8 +1,11 @@
 #+TITLE: Intero layer
 
+* Abandonware
+Spacemacs now includes support for Intero in its [[https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/haskell][Haskell layer]]: try that first.
+This layer is incompatible with newer versions of Spacemacs.
+
 * Description
-This layer adds [[http://commercialhaskell.github.io/intero/][Intero]] functionality on top of the Haskell layer. Spacemacs now
-supports Intero on the develop branch: try using that first.
+This layer adds [[http://commercialhaskell.github.io/intero/][Intero]] functionality on top of the Haskell layer.
 
 * Install
 ** Layer
